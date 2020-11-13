@@ -41,7 +41,7 @@ button.neutral:hover {
   color: var(--neutral-lightest);
 }
 
-button.neutral:focus {
+button.neutral.pressed {
   background-color: var(--neutral-dark);
   color: var(--neutral-lightest);
   box-shadow: inset 2px 2px 5px var(--neutral-darkest);
@@ -84,9 +84,21 @@ button.action:focus {
 }
 
 .form {
-  height: 10rem;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.space-around {
+  margin: .5rem 0;
+}
+
+.space-between-items > * {
+  margin: .25rem 0;
 }
