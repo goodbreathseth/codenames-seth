@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./assets/logo.png";
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
+import Home from "./views/Home"
+import PlayerView from "./views/PlayerView"
+import SpymasterView from "./views/SpymasterView"
 
-function App() {
+import SignIn from "./components/SignIn"
+import SignOut from "./components/SignOut"
+
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+import { auth, db } from "./services/firebase";
+
+
+// db.collection('codenames').doc('game').get().then(doc => {
+//   const data = doc.data();
+//   console.log(data)
+// })
+
+
+
+export default function App() {
+  const [user] = useAuthState(auth);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Route exact path="/">
+        {/* {user ? <Home /> : <PlayerView /> } */}
+        {user ? <SignOut /> : <SignIn />}
+      </Route>
+      <Route path="/player">
+        <PlayerView />
+      </Route>
+      <Route path="/spymaster">
+        <SpymasterView />
+      </Route>
+    </>
   );
 }
-
-export default App;
