@@ -2,8 +2,8 @@
   --neutral-lightest: #F6F1EB;
   --neutral-light: #EFE6D7;
   --neutral: #F3E0C2;
-  --neutral-dark: #7E7063;
-  --neutral-darkest: #1C1C1A;
+  --neutral-dark: #a6927c;
+  --neutral-darkest: #7E7063;
 
   --primary-lightest: #E66521;
   --primary-light: #ED3D08;
@@ -17,7 +17,7 @@
   --secondary-dark: #0F61C4;
   --secondary-darkest: #07225A;
 
-  color: var(--neutral-darkest);
+  color: #000000;
   text-align: center;
 }
 
@@ -32,19 +32,19 @@ button {
 
 button.neutral {
   background-color: var(--neutral-lightest);
-  color: var(--neutral-dark);
-  box-shadow: 2px 2px 5px var(--neutral-dark);
+  color: var(--neutral-darkest);
+  box-shadow: 2px 2px 5px var(--neutral-darkest);
 }
 
 button.neutral:hover {
-  background-color: var(--neutral-dark);
+  background-color: var(--neutral-darkest);
   color: var(--neutral-lightest);
 }
 
 button.neutral.pressed {
-  background-color: var(--neutral-dark);
+  background-color: var(--neutral-darkest);
   color: var(--neutral-lightest);
-  box-shadow: inset 2px 2px 5px var(--neutral-darkest);
+  box-shadow: inset 2px 2px 5px #000000;
 }
 
 button.action {
@@ -101,4 +101,45 @@ button.action:focus {
 
 .space-between-items > * {
   margin: .25rem 0;
+}
+
+.card {
+  background-color: var(--neutral);
+  border-radius: .5rem;
+  padding: 8px;
+}
+
+.card > div {
+  border: 2px solid var(--neutral-dark);
+  border-radius: .5rem;
+}
+
+.square-parent {
+  margin: .5rem;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: space-around;
+}
+
+.square-parent > div:nth-child(2) {
+  width: 70%;
+  border-top: 2px solid var(--neutral-dark);
+}
+
+.card i {
+  font-weight: 700;
+  color: var(--neutral-darkest);
+}
+
+.card h3 {
+  margin: .5rem;
+  background-color: #ffffff;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
+
+.square {
+  width: 30%;
+  height: 40%;
+  background-color: var(--neutral-lightest);
 }

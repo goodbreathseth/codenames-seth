@@ -1,10 +1,12 @@
 import { db, auth } from "../services/firebase";
 import { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 export default function TeamSelect() {
   // Set formValues to be state data
   const [team, setTeam] = useState("");
   const [role, setRole] = useState("");
+  const history = useHistory();
 
   const startGame = (e) => {
     e.preventDefault();
@@ -21,8 +23,12 @@ export default function TeamSelect() {
         { merge: true }
       )
       .then(() => {
-        setTeam("");
-        setRole("");
+        if (role === "spymaster") {
+          history.push("/spymaster");
+        }
+        else {
+          history.push("/player");
+        }
       });
   };
 
