@@ -4,12 +4,12 @@ export default function Card() {
       <div className="card">
         <div>
           <div className="square-parent">
-            <div className="square">a</div>
+            <div className="square">&#8194; </div>
             <div>
-              <i>word</i>
+              <i>LONG WORD</i>
             </div>
           </div>
-          <h3>word</h3>
+          <h3>LONG WORD</h3>
         </div>
       </div>
     </>

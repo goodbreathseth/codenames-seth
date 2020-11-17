@@ -3,8 +3,35 @@ import Card from "../components/Card";
 export default function PlayerView() {
   return (
     <>
-      <h1>PlayerView</h1>
-      <Card />
+      <div className="player-view-container">
+        <div className="player-view">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
     </>
   );
 }
