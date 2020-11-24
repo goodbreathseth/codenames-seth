@@ -34,6 +34,7 @@ export default function PlayerView() {
                   word={word.word}
                   flipped={word.flipped}
                   team={word.team}
+                  player={true}
                 />
               </div>
             ))}

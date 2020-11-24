@@ -40,7 +40,7 @@ button {
 
 @media only screen and (min-width: 600px) {
   button {
-    width: 14rem;
+    max-width: 15rem;
   }
 }
 
@@ -93,12 +93,13 @@ button.action:focus {
   align-items: center;
   background: radial-gradient(closest-side, #f2e008, #f38b3d, #8b1439);
   padding: 0 2rem;
+  overflow-x: hidden;
 }
 
 .logo {
   margin: 14vh 0;
   width: min(100%, 45rem);
-  
+  cursor: pointer;
 }
 
 .form {
@@ -141,7 +142,10 @@ button.action:focus {
   display: grid;
   user-select: none;
   position: relative;
-  cursor: pointer
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .unflipped {
@@ -226,8 +230,31 @@ button.action:focus {
   margin-top: 2px;
 }
 
+.checkmark {
+  transform: rotate(180deg);
+  color: green;
+  font-weight: 900;
+}
+
 .player-view-container {
-  background-color: var(--neutral-lightest);
+  background-image: radial-gradient(
+    closest-corner,
+    #ffffff,
+    var(--neutral-lightest),
+    var(--neutral-light)
+  );
+  padding: 0.5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.spymaster-view-container {
+  background-image: radial-gradient(
+    closest-corner,
+    var(--neutral-darkest),
+    var(--black)
+  );
   padding: 0.5rem;
   min-height: 100vh;
   box-sizing: border-box;
@@ -236,6 +263,9 @@ button.action:focus {
 
 @media only screen and (min-width: 900px) {
   .player-view-container {
+    padding-top: 15%;
+  }
+  .spymaster-view-container {
     padding-top: 15%;
   }
 }

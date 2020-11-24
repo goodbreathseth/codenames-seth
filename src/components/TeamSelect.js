@@ -33,7 +33,7 @@ export default function TeamSelect() {
 
   return (
     <form onSubmit={startGame} className="form text-light">
-      <div className="space-between-items space-around">
+      <div className="space-between-items space-around animate__animated animate__fadeInUp animate__faster">
         <strong>SELECT TEAM</strong>
         <button
           type="button"
@@ -51,7 +51,7 @@ export default function TeamSelect() {
         </button>
       </div>
 
-      <div className="space-between-items space-around">
+      <div className="space-between-items space-around animate__animated animate__fadeInUp">
         <strong>SELECT ROLE</strong>
         <button
           type="button"
@@ -72,11 +72,16 @@ export default function TeamSelect() {
       <div
         className={
           "space-between-items space-around " +
-          (team && role ? "" : "invisible")
+          (team && role
+            ? "animate__animated animate__fadeIn animate__faster"
+            : "invisible")
         }
       >
-        <strong>START</strong>
-        <button type="submit" className="action">
+        {/* <strong>START</strong> */}
+        <button
+          type="submit"
+          className="action animate__animated animate__pulse animate__infinite animate__slow"
+        >
           <h2>🕊️ PLAY GAME</h2>
         </button>
       </div>

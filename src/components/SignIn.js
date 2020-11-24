@@ -20,7 +20,10 @@ export default function SignIn() {
 
   return (
     <>
-      <button onClick={signInWithGoogle} className="action">
+      <button
+        onClick={signInWithGoogle}
+        className="action animate__animated animate__pulse animate__infinite animate__slow"
+      >
         <h2>Sign in with Google</h2>
       </button>
     </>

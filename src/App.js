@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import Home from "./views/Home"
 import PlayerView from "./views/PlayerView"
 import SpymasterView from "./views/SpymasterView"
+import { animate__animated } from "animate.css";
+
 
 export default function App() {
   return (
