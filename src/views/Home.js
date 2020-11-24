@@ -10,11 +10,12 @@ import { auth } from "../services/firebase"
 export default function Home() {
   const [user] = useAuthState(auth);
 
+
   return (
     <div className="home fullscreen padding">
       <img src={logo} alt="Game title" className="logo" />
       { user ? <TeamSelect /> : <SignIn />}
-      { user? <SignOut /> : null}
+      { user ? <SignOut /> : null}
     </div>
   );
 };

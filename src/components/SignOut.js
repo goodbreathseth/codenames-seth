@@ -3,8 +3,8 @@ import { auth } from "../services/firebase";
 export default function SignOut() {
     return (
       auth.currentUser && (
-        <button className="neutral" onClick={() => auth.signOut()}>
-          <h3>SIGN OUT</h3>
+        <button className="neutral space-around" onClick={() => auth.signOut()}>
+          <h2>SIGN OUT</h2>
         </button>
       )
     );

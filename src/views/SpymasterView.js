@@ -1,5 +1,37 @@
+import Card from "../components/Card"
+import Menu from "../components/Menu"
+
 export default function SpymasterView() {
-    return (
-        <h1>SpymasterView</h1>
-    )
+  return (
+    <div className="player-view-container">
+      <Menu />
+      <div className="player-view">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </div>
+  );
 }

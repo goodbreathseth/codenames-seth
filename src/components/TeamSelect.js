@@ -1,6 +1,6 @@
 import { db, auth } from "../services/firebase";
 import { useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 export default function TeamSelect() {
   // Set formValues to be state data
@@ -25,8 +25,7 @@ export default function TeamSelect() {
       .then(() => {
         if (role === "spymaster") {
           history.push("/spymaster");
-        }
-        else {
+        } else {
           history.push("/player");
         }
       });
@@ -70,11 +69,14 @@ export default function TeamSelect() {
         </button>
       </div>
 
-      <div className={"space-between-items space-around " + (team && role ? "" : "invisible")}>
+      <div
+        className={
+          "space-between-items space-around " +
+          (team && role ? "" : "invisible")
+        }
+      >
         <strong>START</strong>
-        <button
-          type="submit"
-          className="action">
+        <button type="submit" className="action">
           <h2>🕊️ PLAY GAME</h2>
         </button>
       </div>

@@ -1,17 +1,38 @@
-export default function Card() {
+export default function Card({ team, flipped, word }) {
   return (
     <>
-      <div className="card">
+      <div
+        className={
+          "card " +
+          (!flipped
+            ? "unflipped"
+            : team === "red"
+            ? "red"
+            : team === "blue"
+            ? "blue"
+            : team === "none"
+            ? "none"
+            : "assassin")
+        }
+      >
         <div>
           <div className="square-parent">
-            <div className="square">&#8194; </div>
+            {!flipped ? <div className="square">&#8194; </div> : null}
             <div>
-              <i>LONG WORD</i>
+              <i className={flipped ? "invisible" : null}>
+                {word.toUpperCase()}
+              </i>
             </div>
           </div>
-          <h3>LONG WORD</h3>
+          <h3>{word.toUpperCase()}</h3>
         </div>
       </div>
     </>
   );
 }
+
+Card.defaultProps = {
+  team: "none",
+  flipped: false,
+  word: "word",
+};

@@ -5,6 +5,10 @@
   --neutral-dark: #a6927c;
   --neutral-darkest: #7e7063;
 
+  --neutral-alt-light: #d4d2c7;
+  --neutral-alt: #cdccc1;
+  --neutral-alt-dark: #b9ad93;
+
   --primary-lightest: #e66521;
   --primary-light: #ed3d08;
   --primary: #d62936;
@@ -13,21 +17,31 @@
 
   --secondary-lightest: #c7d6de;
   --secondary-light: #9ec2dc;
-  --secondary: #0a72a6;
+  --secondary: #025c95;
   --secondary-dark: #0f61c4;
   --secondary-darkest: #07225a;
 
-  color: #000000;
+  --black: #040507;
+  --black-light: #757575;
+
+  color: var(--black);
   text-align: center;
 }
 
 button {
-  /* width: min(100%, 20rem); */
-  width: 100%;
+  width: min(100%, 22rem);
+  /* width: 100%; */
   border-radius: 32px;
   border: none;
   /* padding: 1rem 2rem; */
   transition: all 200ms;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+  button {
+    width: 14rem;
+  }
 }
 
 button.neutral {
@@ -74,6 +88,9 @@ button.action:focus {
 }
 
 .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: radial-gradient(closest-side, #f2e008, #f38b3d, #8b1439);
   padding: 0 2rem;
 }
@@ -81,6 +98,7 @@ button.action:focus {
 .logo {
   margin: 14vh 0;
   width: min(100%, 45rem);
+  
 }
 
 .form {
@@ -88,6 +106,19 @@ button.action:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+  .form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form > * {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 .invisible {
@@ -104,34 +135,58 @@ button.action:focus {
 }
 
 .card {
-  /* background-image: linear-gradient(to bottom right, var(--neutral), var(--neutral-light), var(--neutral), var(--neutral-lightest), var(--neutral)); */
-  background-image: linear-gradient(
-    to bottom right,
-    var(--neutral),
-    var(--neutral-light),
-    var(--neutral)
-  );
   border-radius: 0.5rem;
   padding: 4px;
   box-shadow: 1px 1px 2px rgba(166, 146, 124, 0.4);
   display: grid;
   user-select: none;
   position: relative;
+  cursor: pointer
 }
 
-/* .card:before {
-  content: "";
-  width: 100%;
-  position: absolute;
-  height: 100%;
+.unflipped {
   background-image: linear-gradient(
     to bottom right,
-    var(--primary-dark),
-    var(--primary),
-    var(--primary-dark)
+    var(--neutral),
+    var(--neutral-light),
+    var(--neutral)
   );
-  border-radius: 0.5rem;
-} */
+}
+
+.red {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--primary-dark),
+    var(--primary)
+  );
+}
+
+.blue {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--secondary-dark),
+    var(--secondary),
+    var(--secondary-dark)
+  );
+}
+
+.none {
+  background-image: radial-gradient(
+    closest-corner,
+    var(--neutral-alt-light),
+    var(--neutral-alt),
+    var(--neutral-alt-dark)
+  );
+}
+
+.assassin {
+  background-image: radial-gradient(
+    closest-corner,
+    var(--black-light),
+    var(--black)
+  );
+}
 
 .card > div {
   display: grid;
@@ -174,24 +229,83 @@ button.action:focus {
 .player-view-container {
   background-color: var(--neutral-lightest);
   padding: 0.5rem;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
+  position: relative;
+}
+
+@media only screen and (min-width: 900px) {
+  .player-view-container {
+    padding-top: 15%;
+  }
 }
 
 .player-view {
   display: grid;
-  /* margin: 0.5rem; */
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 0.33rem;
   width: 100%;
-  height: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 600px) {
   .player-view {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(25, 1fr);
+    grid-template-rows: repeat(13, 1fr);
     grid-gap: 0.5rem;
   }
+}
+
+.menu {
+  position: absolute;
+  z-index: 10;
+  right: 100%;
+  top: 0;
+  min-width: 10rem;
+  padding: 1rem 4rem 4rem 1rem;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--neutral-dark),
+    var(--neutral-darkest),
+    var(--neutral-dark)
+  );
+  box-shadow: 2px 2px 5px var(--neutral-darkest);
+  border-bottom-right-radius: 85%;
+  transition: all 150ms;
+}
+
+@media only screen and (min-width: 600px) {
+  .menu > * {
+    display: block;
+  }
+}
+
+.expanded {
+  transform: translateX(100%);
+}
+
+.expand-menu {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 98%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: auto;
+  padding: 1rem 1rem;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--neutral-darkest),
+    var(--neutral-dark)
+  );
+  /* background: inherit; */
+  box-shadow: 2px 2px 5px var(--neutral-darkest);
+}
+
+.expand-menu > :first-child {
+  padding: 0;
+  margin: 0;
 }
