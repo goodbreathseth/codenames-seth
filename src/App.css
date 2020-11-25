@@ -131,6 +131,11 @@ button.action:focus {
   margin: 0.5rem 0;
 }
 
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .space-between-items > * {
   margin: 0.25rem 0;
 }

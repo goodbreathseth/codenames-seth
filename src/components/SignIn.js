@@ -13,7 +13,6 @@ export default function SignIn() {
           displayName: user.displayName,
           photoURL: user.photoURL,
         })
-        .then(console.log("Successfully wrote user"))
         .catch((error) => console.log("Error writing user: ", error));
     });
   };

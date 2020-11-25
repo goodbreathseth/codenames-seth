@@ -11,8 +11,12 @@ export default function TeamSelect() {
   const startGame = (e) => {
     e.preventDefault();
 
-    const { uid } = auth.currentUser;
 
+    if (!auth.currentUser) {
+      return
+    }
+    
+    const { uid } = auth.currentUser;
     db.collection("users")
       .doc(uid)
       .set(
@@ -85,6 +89,15 @@ export default function TeamSelect() {
           <h2>🕊️ PLAY GAME</h2>
         </button>
       </div>
+
+      {auth.currentUser && (
+        <button
+          className="neutral centered space-around animate__animated animate__fadeIn animate__delay-1s"
+          onClick={() => auth.signOut()}
+        >
+          <h2>SIGN OUT</h2>
+        </button>
+      )}
     </form>
   );
 }
