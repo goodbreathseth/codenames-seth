@@ -99,7 +99,12 @@ button.action:focus {
 .logo {
   margin: 14vh 0;
   width: min(100%, 45rem);
-  cursor: pointer;
+}
+
+@media only screen and (min-width: 900px) {
+  .logo {
+    cursor: pointer;
+  }
 }
 
 .form {
@@ -336,7 +341,7 @@ button.action:focus {
     var(--neutral-darkest),
     var(--neutral-dark)
   );
-  /* background: inherit; */
+  outline: none;
   box-shadow: 2px 2px 5px var(--neutral-darkest);
 }
 

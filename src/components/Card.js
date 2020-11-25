@@ -8,7 +8,8 @@ export default function Card({ team, flipped, word, spymaster, player }) {
     <>
       <div
         className={
-          "card animate__animated animate__faster " + (player && flipped ? "animate__flipInX " : "") +
+          "card animate__animated animate__faster " +
+          (player && flipped ? "animate__flipInX " : "") +
           (!flipped && player
             ? "unflipped cursor-pointer "
             : team === "red"
@@ -25,7 +26,7 @@ export default function Card({ team, flipped, word, spymaster, player }) {
         <div
           className={
             "animate__animated" +
-            (spymaster && flipped ? " animate__flash" : "")
+            (spymaster && flipped ? " animate__flash animate__repeat-2 " : "")
           }
         >
           <div className="square-parent">
